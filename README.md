@@ -15,10 +15,10 @@ Before you run `docker-compose up`,you must run a data container named `dataphp_
 
     docker run -ti --name dataphp_dataPhp_1 -v /var/lib/mysql  ubuntu  /bin/bash
 
-then you should run the command like follows to create a laravel project named `jam`:
+then you should run the command like follows to create a laravel project named `project`:
 
-    laravel new jam
+    laravel new project
 
-you can also change the project name `jam` to others in the file ./httpd.conf,and if you want to enter the container whom run apache inside,you can run ./entry to enter it faster.
+you can also change the project name `project6` to others in the file ./httpd.conf,and if you want to enter the container whom run apache inside,you can run ./entry to enter it faster.
 
 Finally,enjoy it!
