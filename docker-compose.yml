@@ -1,0 +1,26 @@
+web:
+  build: .
+  ports:
+    - "80:80"
+  links:
+    - db
+    - redis
+  volumes:
+    - .:/code
+    - ./php.ini:/etc/php.ini
+db:
+  image: "mysql:5"
+  ports:
+    - "3306:3306"
+  volumes:
+    - ./mysql:/etc/mysql/conf.d
+  volumes_from:
+    - "dataphp_dataPhp_1"
+  environment:
+    - "MYSQL_ROOT_PASSWORD=jamlee"
+
+redis:
+  image: "redis"
+  ports:
+    - "6379:6379"
+  

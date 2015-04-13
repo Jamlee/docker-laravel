@@ -1,0 +1,2 @@
+name=`docker-compose ps |grep web|awk '{print $1}'`
+docker exec -ti $name /bin/bash 
