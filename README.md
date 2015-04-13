@@ -19,6 +19,6 @@ then you should run the command like follows to create a laravel project named `
 
     laravel new jam
 
-you also change the project name `jam` to others in the file ./httpd.conf.
+you can also change the project name `jam` to others in the file ./httpd.conf,and if you want to enter the container whom run apache inside,you can run ./entry to enter it faster.
 
 Finally,enjoy it!
