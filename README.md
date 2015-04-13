@@ -19,6 +19,6 @@ then you should run the command like follows to create a laravel project named `
 
     laravel new project
 
-you can also change the project name `project6` to others in the file ./httpd.conf,and if you want to enter the container whom run apache inside,you can run ./entry to enter it faster.
+you can also change the project name `project` to others such as `blog` or `www` in the file ./httpd.conf,and if you want to enter the container whom run apache inside,you can run ./entry to enter it faster.
 
 Finally,enjoy it!
