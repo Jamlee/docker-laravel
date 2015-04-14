@@ -15,7 +15,11 @@ Before you run `docker-compose up`,you must run a data container named `dataphp_
 
     docker run -ti --name dataphp_dataPhp_1 -v /var/lib/mysql  ubuntu  /bin/bash
 
-then you should run the command like follows to create a laravel project named `project`:
+just run `docker-compose up` and open the url http://127.0.0.1. 
+
+#create project of laravel
+
+then you could run the command like follows to create a laravel project named `project` under the path `./webroot` to create a laravel5 project:
 
     laravel new project
 
