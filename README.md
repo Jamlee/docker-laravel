@@ -40,7 +40,7 @@ Next,add a record to a hosts file.
 
 Finally,open the url http://laravel.dev and enjoy it!
 
-#The more fast way to use this
+#0x3 The more fast way to use this
 
 create data container:
 
