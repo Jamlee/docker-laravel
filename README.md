@@ -2,6 +2,9 @@
 
 this project base on [docker-compse-lamp] (https://github.com/tkyk/docker-compose-lamp)
 
+
+#0x1 Quickly start
+
 Currently this project consists of:
 
 - CentOS 6
@@ -10,24 +13,25 @@ Currently this project consists of:
 - PHP 5.6 ([Les RPM de Remi - Repository](http://rpms.famillecollet.com/))
 - Redis 2.8.19
 
+Prerequre tools:
 
-Before you run `docker-compose up`,you must run a data container named `dataphp_dataPhp_1`.it can keep the data of mysql not to be remove with `docker-compose rm`.
+- docker
+- docker-compose
+- [pipework](https://github.com/jpetazzo/pipework)
 
-    docker run -ti --name dataphp_dataPhp_1 -v /var/lib/mysql  ubuntu  /bin/bash
+Before you run the command  `docker-compose up`,you must run a data container named `dataphp`.it can keep the data of mysql not to be remove with `docker-compose rm`.
 
-After you have done above , you could start your service by one instruction as following:
-
-    docker-compose up
+    docker run --name dataphp -v /var/lib/mysql  ubuntu && docker-compose up
 
 Please open url http://localhost after those services starting,you can get some useful information.
 
-#create project of laravel
+#0x2 Create project of laravel
 
 You could run the command like follows to create a laravel project named `project` under the path `./webroot` to create a laravel5 project:
 
     laravel new project
 
-Note: you can also change the project name `project` to others such as `blog` or `www` in the file ./httpd.conf,and if you want to enter the container whom run apache inside,you can run ./entry to enter it faster.
+Note: you can also change the project name `project` to others such as `blog` or `www` in the file ./httpd.conf,and if you want to enter the container whom run apache inside,you can run `./etl enter` to enter it faster.
 
 Next,add a record to a hosts file.
 
@@ -35,3 +39,19 @@ Next,add a record to a hosts file.
 
 
 Finally,open the url http://laravel.dev and enjoy it!
+
+#The more fast way to use this
+
+create data container:
+
+    docker run -ti --name dataphp -v /var/lib/mysql  ubuntu
+
+just to use script `ctl`:
+	
+    ./ctl start   #start all of servies
+    ./ctl stop    #stop all of servies
+    ./ctl rm      #rm all container but exculde data contianer `dataphp`
+    ./ctl restart #rm ,start
+    ./ctl enter   #enter the main container
+
+while you use the script,you can also give the container a static ip by change the script.the default ip of container is `192.168.99.11`

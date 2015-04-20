@@ -15,7 +15,7 @@ db:
   volumes:
     - ./mysql:/etc/mysql/conf.d
   volumes_from:
-    - "dataphp_dataPhp_1"
+    - "dataphp"
   environment:
     - "MYSQL_ROOT_PASSWORD=jamlee"
 
