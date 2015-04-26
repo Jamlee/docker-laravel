@@ -56,6 +56,8 @@ just to use script `ctl`:
     ./ctl stop    #stop all of servies
     ./ctl rm      #rm all container but exculde data contianer `dataphp`
     ./ctl restart #rm ,start
-    ./ctl enter   #enter the main container
+    ./ctl apache  #enter the apahce container
+    ./ctl mysql   #enter the mysql  container
+    ./ctl redis   $enter the redis container
 
-while you use the script,you can also give the container a static ip by changing the script.the default ip of container is `192.168.99.11`
+while you use the script to start or restart your container,you can also give the container a static ip by changing the script.the default ip of container is `192.1.68.99.11`. please read source of `ctl`.
