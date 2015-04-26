@@ -21,7 +21,7 @@ Prerequre tools:
 
 Before you run the command  `docker-compose up`,you must run a data container named `dataphp`.it can keep the data of mysql not to be remove with `docker-compose rm`.
 
-    docker run --name dataphp -v /var/lib/mysql  ubuntu && docker-compose up
+   docker-compose -f data.yml up && docker-compose up
 
 Please open url http://localhost after those services starting,you can get some useful information.
 
@@ -44,7 +44,7 @@ Finally,open the url http://laravel.dev and enjoy it!
 
 create data container:
 
-    docker run -ti --name dataphp -v /var/lib/mysql  ubuntu
+    docker-compose -f data.yml up
 
 just to use script `ctl`:
 	

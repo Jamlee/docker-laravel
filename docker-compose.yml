@@ -15,9 +15,10 @@ db:
   volumes:
     - ./mysql:/etc/mysql/conf.d
   volumes_from:
-    - "dataphp"
+    - "dockerlaravel_data_1"
   environment:
     - "MYSQL_ROOT_PASSWORD=jamlee"
+    - "MYSQL_DATABASE=jamlee"
 
 redis:
   image: "redis"
