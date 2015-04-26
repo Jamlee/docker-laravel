@@ -15,18 +15,18 @@ Currently this project consists of:
 
 Prerequre tools:
 
-- docker
-- docker-compose
+- docker(1.6+)
+- docker-compose(1.2+)
 - [pipework](https://github.com/jpetazzo/pipework)
 
 Before you run the command  `docker-compose up`,you must run a data container.it can keep the data of mysql not to be removed with `docker-compose rm`.
 
     docker-compose -f data.yml up && docker-compose up
 
-Please open url http://localhost after those services started,you  will get some useful information.
+Then open url http://localhost after those services started,you will get some useful information.
 
 note:
-     while you execute `docker-compose -f data.yml up` again,you will lost your data of mysql.so you just need do once.
+     if you execute `docker-compose -f data.yml up` again,you will lost your data of mysql. so you just need to do it once.
      
 
 #0x2 Create project of laravel
@@ -58,6 +58,6 @@ just to use script `ctl`:
     ./ctl restart #rm ,start
     ./ctl apache  #enter the apahce container
     ./ctl mysql   #enter the mysql  container
-    ./ctl redis   $enter the redis container
+    ./ctl redis   #enter the redis container
 
 while you use the script to start or restart your container,you will give the container a static ip by changing the script.the default ip of container is `192.1.68.99.11`. please read source of `ctl`.
