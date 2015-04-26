@@ -19,11 +19,15 @@ Prerequre tools:
 - docker-compose
 - [pipework](https://github.com/jpetazzo/pipework)
 
-Before you run the command  `docker-compose up`,you must run a data container named `dataphp`.it can keep the data of mysql not to be remove with `docker-compose rm`.
+Before you run the command  `docker-compose up`,you must run a data container.it can keep the data of mysql not to be remove with `docker-compose rm`.
 
     docker-compose -f data.yml up && docker-compose up
 
 Please open url http://localhost after those services starting,you can get some useful information.
+
+note:
+     while you execute `docker-compose -f data.yml up` again,you will lost your data of mysql.so you just need do once.
+     
 
 #0x2 Create project of laravel
 
