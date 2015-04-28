@@ -13,30 +13,39 @@ Currently this project consists of:
 - PHP 5.6 ([Les RPM de Remi - Repository](http://rpms.famillecollet.com/))
 - Redis 2.8.19
 
-Prerequre tools:
+Prerequire tools:
 
 - docker(1.6+)
 - docker-compose(1.2+)
 - [pipework](https://github.com/jpetazzo/pipework)
 
-Before you run the command  `docker-compose up`,you must run a data container.it can keep the data of mysql not to be removed with `docker-compose rm`.
+Prequire configiration:
+
+please add a record to a hosts file.
+
+     sudo echo "127.0.0.1  laravel.dev" >> /etc/hosts
+
+
+
+
+Before you run the command  `docker-compose up`,you must create a data container.it can keep the data of mysql not to be removed with `docker-compose rm`.
 
     docker-compose -f data.yml up && docker-compose up
 
-Then open url http://localhost after those services started,you will get some useful information.
+Then open url http://localhost or http://laravel.dev after those services started,you will get some useful information.
 
 note:
-     if you execute `docker-compose -f data.yml up` again,you will lost your data of mysql. so you just need to do it once.
+     if you execute `docker-compose -f data.yml up` again,you will lost your data of mysql. so you just need to do it once.**I have perpared a initial laravel project for you**.
      
 
-#0x2 Create project of laravel
+#0x2 Create project of laravel by yourself
 
 You could run the command like follows to create a laravel project named `project` under the path `./webroot` :
 
     cd ./webroot
     laravel new project
 
-Note: you can also change the project name `project` to others such as `blog` or `www` in the file ./httpd.conf,and if you want to enter the container whom run apache inside,you can run `./ctl apache` to enter it faster.
+Note: you can also change the project name `project` to others such as `blog` or `www` in the file `./httpd.conf`,and if you want to enter the container whom run apache inside,you can run `./ctl apache` to enter it faster.
 
 Next,add a record to a hosts file.
 
