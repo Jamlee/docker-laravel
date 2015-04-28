@@ -3,8 +3,6 @@
 this project base on [docker-compse-lamp] (https://github.com/tkyk/docker-compose-lamp)
 
 
-#0x1 Quickly start
-
 Currently this project consists of:
 
 - CentOS 6
@@ -19,12 +17,14 @@ Prerequire tools:
 - docker-compose(1.2+)
 - [pipework](https://github.com/jpetazzo/pipework)
 
-Prequire configiration:
+Prerequire configiration:
 
 please add a record to a hosts file.
 
      sudo echo "127.0.0.1  laravel.dev" >> /etc/hosts
 
+
+#0x1 Quickly start
 
 
 
