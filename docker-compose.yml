@@ -7,18 +7,19 @@ web:
     - redis
   volumes:
     - .:/code
-    - ./php.ini:/etc/php.ini
+    - ./config/php.ini:/etc/php.ini
+  working_dir: "/code/webroot"
 db:
   image: "mysql:5"
   ports:
     - "3306:3306"
   volumes:
-    - ./mysql:/etc/mysql/conf.d
+    - ./config/mysql:/etc/mysql/conf.d
   volumes_from:
     - "dockerlaravel_data_1"
   environment:
     - "MYSQL_ROOT_PASSWORD=jamlee"
-    - "MYSQL_DATABASE=jamlee"
+    - "MYSQL_DATABASE=laravel"
 
 redis:
   image: "redis"
