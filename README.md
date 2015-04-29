@@ -17,7 +17,7 @@ Prerequire tools:
 - docker-compose(1.2+)
 - [pipework](https://github.com/jpetazzo/pipework)
 
-Prerequire configiration:
+Prerequire configuration:
 
 please add a record to a hosts file.
 
