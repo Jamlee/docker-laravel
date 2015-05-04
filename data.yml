@@ -1,2 +1,4 @@
 data:
   image: ubuntu 
+  volumes:
+   - "var/lib/mysql"
