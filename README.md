@@ -1,5 +1,7 @@
 # The laravel development environment using  *docker-compose*
 
+中国地区优化版(http://git.oschina.net/jamlee/docker-laravel-cn)
+
 this project base on [docker-compse-lamp] (https://github.com/tkyk/docker-compose-lamp)
 
 
@@ -17,7 +19,7 @@ Prerequire tools:
 - docker-compose(1.2+)
 - [pipework](https://github.com/jpetazzo/pipework)
 
-Prerequire configiration:
+Prerequire configuration:
 
 please add a record to a hosts file.
 
@@ -35,7 +37,7 @@ Before you run the command  `docker-compose up`,you must create a data container
 Then open url http://localhost or http://laravel.dev after those services started,you will get some useful information.
 
 note:
-     if you execute `docker-compose -f data.yml up` again,you will lost your data of mysql. so you just need to do it once.**I have perpared a initial laravel project for you**.
+     if you execute `docker-compose -f data.yml up` again,you will lost your data of mysql. so you just need to do it once.**I have perpared a initial laravel project for you under the path `./webroot/project` and you need run the command**`composer install && sudo chmod -R 777 storage`**to make it available**.
      
 
 #0x2 Create project of laravel by yourself
