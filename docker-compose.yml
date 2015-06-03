@@ -5,10 +5,10 @@ web:
   links:
     - db
     - redis
-  volumes:
-    - .:/code
-    - ./config/php.ini:/etc/php.ini
-  working_dir: "/code/webroot"
+  extends:
+    file: common.yml
+    service: common
+  command: "/bin/sh -c 'while true; do sleep 1; done'"
 db:
   image: "mysql:5"
   ports:
