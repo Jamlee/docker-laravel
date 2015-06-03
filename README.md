@@ -40,14 +40,17 @@ please add a record to a hosts file.
     service httpd start
 
 note:
-    Why do i manually start the httpd start in the container rather than starting with container ?
-    Because sometimes i need to restart my httpd service.and please understand fact that we always need to install a ton of tools such as git and gcc,thus we `never  remove the master development container(apache)`. according to above,I use die loop to keep docker not to exit within `docker-compose.yml`.
+    
+>    Why do i manually start the httpd start in the container rather than starting with container ?
+>    Because sometimes i need to restart my httpd service, and please understand fact that we always need to install a ton of tools such as git and gcc,thus we `never  remove the master development container(apache)`. according to above,I use die loop to keep docker not to exit within `docker-compose.yml`.
 
 3)Then open url http://localhost or http://laravel.dev after those services started,you will get some useful information.
 
 note:
-     if you execute `docker-compose -f data.yml up` again,you will lost your data of mysql. so you just need to do it once.**I have perpared a initial laravel project for you under the path `./webroot/project` and you need run the command**`composer install && sudo chmod -R 777 storage`**to make it available**.
-     
+
+>    if you execute `docker-compose -f data.yml up` again,you will lost your data of mysql. so you just need to do
+it once.**I have perpared a initial laravel project for you under the path `./webroot/project` and you need run the command**`composer install && sudo chmod -R 777 storage`**to make it available**.
+
 
 #0x2 Create project of laravel by yourself
 
@@ -56,7 +59,8 @@ You could run the command like follows to create a laravel project named `projec
     ./ctl apache #enter container
     laravel new project #create project
 
-Note: you can also change the project name `project` to others such as `blog` or `www` in the file `./httpd.conf`,and if you want to enter the container whom run apache inside,you can run `./ctl apache` to enter it faster.
+Note: 
+> you can also change the project name `project` to others such as `blog` or `www` in the file `./httpd.conf`,and if you want to enter the container whom run apache inside,you can run `./ctl apache` to enter it faster.
 
 Next,add a record to a hosts file.
 
