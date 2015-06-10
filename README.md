@@ -41,7 +41,7 @@ please add a record to a hosts file.
 
 note:
     
->    Why do i manually start the httpd start in the container rather than starting with container ?
+>    Why do i manually start  httpd  in the container rather than starting with container ?
 >    Because sometimes i need to restart my httpd service, and please understand fact that we always need to install a ton of tools such as git and gcc,thus we `never  remove the master development container(apache)`. according to above,I use die loop to keep docker not to exit within `docker-compose.yml`.
 
 3)Then open url http://localhost or http://laravel.dev after those services started,you will get some useful information.
