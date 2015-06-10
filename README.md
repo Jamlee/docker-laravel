@@ -17,7 +17,7 @@ Prerequire tools:
 
 - docker(1.6+)
 - docker-compose(1.2+)
-- [pipework](https://github.com/jpetazzo/pipework)
+
 
 Prerequire configuration:
 
@@ -77,4 +77,3 @@ just to use script `ctl`:
     ./ctl mysql   #enter the mysql  container
     ./ctl redis   #enter the redis container
 
-while you use the script to start or restart your container,you will assign a static ip to the container .the default ip of container is `192.1.68.99.11`. if you want to know more,please read source code of `./ctl`.
