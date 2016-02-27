@@ -1,28 +1,38 @@
-web:
-  build: .
-  ports:
-    - "80:80"
-  links:
-    - db
-    - redis
-  extends:
-    file: common.yml
-    service: common
-  command: "/bin/sh -c 'while true; do sleep 1; done'"
-db:
-  image: "mysql:5"
-  ports:
-    - "3306:3306"
-  volumes:
-    - ./config/mysql:/etc/mysql/conf.d
-  volumes_from:
-    - "dockerlaravel_data_1"
-  environment:
-    - "MYSQL_ROOT_PASSWORD=jamlee"
-    - "MYSQL_DATABASE=laravel"
+version: '2'
 
-redis:
-  image: "redis"
-  ports:
-    - "6379:6379"
+services:
+  web: 
+    image: laravel:1
+    ports:
+      - "80:80"
+    extends:
+      file: common.yml
+      service: common
+    environment:
+      - "affinity:image==laravel:1"
+
+  db:
+    image: "mysql:5"
+    ports:
+      - "3306:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+      - /Users/jamlee/box/laravel/config/mysql:/etc/mysql/conf.d
+    environment:
+      - "MYSQL_ROOT_PASSWORD=jamlee"
+      - "MYSQL_DATABASE=laravel"
+      - "affinity:image==mysql:5"
+
+  redis:
+    image: "redis"
+    ports:
+      - "6379:6379"
+    environment:
+      - "affinity:image==redis:latest"
+
+networks:
+  default:
+    driver: overlay      
   
+volumes:
+  dbdata:

@@ -1,5 +1,5 @@
 FROM centos:6
-MAINTAINER Takayuki Miwa <i@tkyk.name>
+MAINTAINER jamlee jamlee@jamlee.cn
 
 ENV code_root /code
 ENV httpd_conf ${code_root}/config/httpd.conf
