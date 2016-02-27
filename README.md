@@ -16,9 +16,9 @@ Prerequire tools:
 #0x1 Create project of laravel by yourself
 
 You could run the command like follows to create a laravel project named `project` under the path `./webroot` :
-   $ docker-compose up -d
-   $ ./ctl apache #enter container
-   $ laravel new project #create project
+    $ docker-compose up -d
+    $ ./ctl apache #enter container
+    $ laravel new project #create project
 
 Note: 
 > you can also change the project name `project` to others such as `blog` or `www` in the file `./httpd.conf`
@@ -27,7 +27,7 @@ Note:
 
 just to use script `ctl`:
 
-   $ ./ctl apache  #enter the apahce container
-   $ ./ctl mysql   #enter the mysql  container
-   $ ./ctl redis   #enter the redis container
+    $ ./ctl apache  #enter the apahce container
+    $ ./ctl mysql   #enter the mysql  container
+    $ ./ctl redis   #enter the redis container
 
