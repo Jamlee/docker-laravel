@@ -1,19 +1,41 @@
 #!/bin/bash
 #author jamlee webboy89860@gmail.com
 
-#begin
+case $1 in
+  apache)
+    name=`docker-compose ps| grep apache | awk '{print $1}'`
+    docker exec -ti $name  /bin/bash
+  ;;
+  mysql)
+    db_name=`docker-compose ps| grep db | awk '{print $1}'`
+    docker exec -ti $db_name  /bin/bash
+  ;;
 
-if [ "$1" == "apache" ]; then
-  name=`docker-compose ps| grep apache | awk '{print $1}'`
-  docker exec -ti $name  /bin/bash
-fi
+  redis) 
+    redis_name=`docker-compose ps| grep redis | awk '{print $1}'`
+    docker exec -ti $redis_name  /bin/bash
+  ;;
+ 
+  *)
+    cat <<EOF
 
-if [ "$1" == "mysql" ]; then
-  db_name=`docker-compose ps| grep db | awk '{print $1}'`
-  docker exec -ti $db_name  /bin/bash
-fi
+    """""""""""""""""""""""""""""""""""""""""""""""
+    "
+    " DOCKER DEV ENV  HELPER
+    "
+    """"""""""""""""""""""""""""""""""""""""""""""
 
-if [ "$1" == "redis" ]; then
-  redis_name=`docker-compose ps| grep redis | awk '{print $1}'`
-  docker exec -ti $redis_name  /bin/bash
-fi
+    please input one of following keyword:
+
+        apache, mysql, redis 
+
+    for example:
+        ./ctl apache #enter apache
+
+
+
+
+EOF
+  ;;
+
+esac
