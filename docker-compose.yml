@@ -2,7 +2,7 @@ version: '2'
 
 services:
   web: 
-    image: laravel:1
+    image: webboy89860/laravel:1
     ports:
       - "80:80"
     extends:
