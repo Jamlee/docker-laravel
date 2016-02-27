@@ -1,10 +1,4 @@
 # The laravel development environment using  *docker-compose*
-
-中国地区优化版(http://git.oschina.net/jamlee/docker-laravel-cn)
-
-this project base on [docker-compse-lamp] (https://github.com/tkyk/docker-compose-lamp)
-
-
 Currently this project consists of:
 
 - CentOS 6
