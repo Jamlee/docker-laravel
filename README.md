@@ -16,6 +16,7 @@ Prerequire tools:
 #0x1 Create project of laravel by yourself
 
 You could run the command like follows to create a laravel project named `project` under the path `./webroot` :
+    
     $ docker-compose up -d
     $ ./ctl apache #enter container
     $ laravel new project #create project
