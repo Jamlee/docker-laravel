@@ -1,0 +1,3 @@
+[submodule "rs"]
+	path = webroot/rs
+	url = https://git.oschina.net/jamlee/rs.git
