@@ -2,15 +2,12 @@ version: '2'
 
 services:
   web: 
-    image: webboy89860/laravel:1
+    build: .
     ports:
       - "80:80"
     extends:
       file: common.yml
       service: common
-    environment:
-      - "affinity:image==laravel:1"
-
   db:
     image: "mysql:5"
     ports:
@@ -21,18 +18,10 @@ services:
     environment:
       - "MYSQL_ROOT_PASSWORD=jamlee"
       - "MYSQL_DATABASE=laravel"
-      - "affinity:image==mysql:5"
-
   redis:
     image: "redis"
     ports:
       - "6379:6379"
-    environment:
-      - "affinity:image==redis:latest"
 
-networks:
-  default:
-    driver: overlay      
-  
 volumes:
   dbdata:
