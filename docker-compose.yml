@@ -9,14 +9,14 @@ services:
       file: common.yml
       service: common
   db:
-    image: "mysql:5"
+    image: "mysql:5.6"
     ports:
       - "3306:3306"
     volumes:
       - dbdata:/var/lib/mysql
-      - /Users/jamlee/box/laravel/config/mysql:/etc/mysql/conf.d
+      - ./config/mysql:/etc/mysql/conf.d
     environment:
-      - "MYSQL_ROOT_PASSWORD=jamlee"
+      - "MYSQL_ROOT_PASSWORD=root"
       - "MYSQL_DATABASE=laravel"
   redis:
     image: "redis"

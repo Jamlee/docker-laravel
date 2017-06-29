@@ -6,5 +6,7 @@ services:
       - .:/code
       - ./config/php.ini:/etc/php.ini
       - ./config/env:/root/.bashrc
+      - ./config/vhost.conf:/etc/httpd/vhost.conf
+      - ./config/httpd.conf:/etc/httpd/conf/httpd.conf
     working_dir: "/code/webroot"
 
