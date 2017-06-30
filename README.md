@@ -1,7 +1,3 @@
-> This Repo is not maintained anymore.
-
-
-
 # The laravel development environment using  *docker-compose*
 Currently this project consists of:
 
